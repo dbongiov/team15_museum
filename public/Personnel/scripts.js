@@ -65,7 +65,7 @@ async function getData() {
     console.log(musNames);
     const appendItem = document.createElement('option');
     appendItem.innerHTML = `
-      <option> ${musNames.museum_name} </option>`;
+      <option> ${musNames.Museum_info.museum_name} </option>`;
     museumIdNames.append(appendItem);
   });
 
