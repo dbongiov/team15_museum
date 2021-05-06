@@ -90,5 +90,13 @@ export default (sequelize, DataTypes) => {
     },
     { freezeTableName: true, timestamps: false }
   );
+  MuseumInfo.associate = (models) => {
+    MuseumInfo.hasMany(models.MuseumStaff, {
+      foreignKey: 'museum_id'
+    });
+    // MuseumInfo.belongsTo(models.StaffRoles, {
+    //   through: models.MuseumStaff
+    // });
+  };
   return MuseumInfo;
 };
