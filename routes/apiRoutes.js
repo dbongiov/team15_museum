@@ -14,11 +14,19 @@ router.get('/', (req, res) => {
 /// /////////////////////////////////
 /// ////Museum Staff Endpoints////////
 /// /////////////////////////////////
+
+// Museum Staff, Role, Location //
 router.route('/museumStaffRole')
   .get(async (req, res) => {
     try {
-      const roles = await db.MuseumStaff.findAll({include: db.StaffRole});
-
+      // const roles = await db.MuseumStaff.findAll({include: db.StaffRole});
+      const roles = await db.MuseumStaff.findAll({
+        include: [
+          db.MuseumInfo,
+          db.StaffRole
+        ]
+      });
+      console.table(roles);
       const staffRoles = roles.map((role) => {
         console.log('role', role);
         const dataObject = {
@@ -35,27 +43,29 @@ router.route('/museumStaffRole')
       res.json({message: err});
     }
   });
-// router.route('/museumStaffRole')
+
+// Museum Staff and location //
+// router.route('/museumStaffLocation')
 //   .get(async (req, res) => {
 //     try {
-//       const roles = await db.StaffRole.findAll();
-//       const staffs = await db.MuseumStaff.findAll();
-//       const museumStaffRole = roles.map((role) => {
-//         const staffRoles = staffs.find((staff) => staff.role_id === role.role_id);
-//         console.log('role', role)
-//         console.log('staffRoles', staffRoles);
-//         return {
-//           ...role.dataValues,
-//           ...staffRoles.dataValues
+//       const names = await db.MuseumStaff.findAll({include: db.MuseumInfo});
+
+//       const museumNames = names.map((name) => {
+//         console.log('name', name);
+//         const dataObject = {
+//           ...name.dataValues,
+//           ...name.Museum_info.dataValues
 //         };
+//         delete dataObject.Museum_info;
+//         return dataObject;
 //       });
-//       res.json({data: museumStaffRole});
+//       console.log(museumNames);
+//       res.json({data: museumNames});
 //     } catch (err) {
 //       console.error(err);
-//       res.json({message: 'something went wrong on the server!'});
+//       res.json({message: err});
 //     }
 //   });
-
 
 router.get('/museum_staff', async (req, res) => {
   try {
@@ -84,7 +94,7 @@ router.get('/museum_staff/:staff_id', async (req, res) => {
 });
 
 router.post('/museum_staff', async (req, res) => {
-  const staff = await db.MuseumStaff.findAll();
+  const staff = await db.MuseumStaff.findAll(({include: db.StaffRole, MuseumInfo}));
   const currentId = (await staff.length) + 1;
   try {
     const newStaff = await db.MuseumStaff.create({
@@ -117,17 +127,21 @@ router.delete('/museum_staff/:staff_id', async (req, res) => {
 
 router.put('/museum_staff', async (req, res) => {
   try {
-    await db.MuseumStaff.update(
-      {
-        employee_first_name: req.body.employee_first_name,
-        employee_last_name: req.body.employee_last_name
-      },
-      {
-        where: {
-          staff_id: req.body.staff_id
-        }
+    await db.MuseumStaff.update({
+      include: [
+        db.MuseumInfo,
+        db.StaffRole
+      ]
+    },
+    {
+      employee_first_name: req.body.employee_first_name,
+      employee_last_name: req.body.employee_last_name
+    },
+    {
+      where: {
+        staff_id: req.body.staff_id
       }
-    );
+    });
     res.send('Successfully Updated');
   } catch (err) {
     console.error(err);
