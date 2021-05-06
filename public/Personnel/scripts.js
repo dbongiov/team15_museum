@@ -37,7 +37,7 @@ async function getData() {
   const tableDataRoleId = await requestRoleId.json();
   // return tableData;
   console.table(tableData);
-  console.table(tableDataLoc);
+  // console.table(tableDataLoc);
 
   tableData.data.forEach((element) => {
     console.table(element.staff_role);
