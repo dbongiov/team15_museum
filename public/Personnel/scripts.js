@@ -43,9 +43,9 @@ async function getData() {
     console.table(element.staff_role);
   });
 
-  tableDataLoc.data.forEach((element) => {
-    console.table(element.Museum_info);
-  });
+  // tableDataLoc.data.forEach((element) => {
+  //   console.table(element.Museum_info);
+  // });
 
   tableData.data.forEach((staff) => {
     console.log(staff);
