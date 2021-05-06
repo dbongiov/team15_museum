@@ -61,7 +61,7 @@ async function getData() {
     result.append(appendItem);
   });
 
-  tableDataLoc.data.forEach((musNames) => {
+  tableData.data.forEach((musNames) => {
     console.log(musNames);
     const appendItem = document.createElement('option');
     appendItem.innerHTML = `
