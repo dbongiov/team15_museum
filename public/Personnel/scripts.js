@@ -30,10 +30,10 @@ async function getData() {
   const roleId = document.querySelector('#roleId');
   const museumIdNames = document.querySelector('#museumIdNames');
   const requestRole = await fetch('/api/museumStaffRole');
-  const requestLoc = await fetch('/api/museumStaffLocation');
+  // const requestLoc = await fetch('/api/museumStaffLocation');
   const requestRoleId = await fetch('/api/staff_role');
   const tableData = await requestRole.json();
-  const tableDataLoc = await requestLoc.json();
+  // const tableDataLoc = await requestLoc.json();
   const tableDataRoleId = await requestRoleId.json();
   // return tableData;
   console.table(tableData);
