@@ -25,48 +25,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-/* Setting up a type head request for Museum Information */ 
-async function windowActions() {
-	const request = await fetch('/api/museum_info') // Fetch request
-	const names = await request.json() // Empty array, this replaces the race condition promise chain
-																		// from the original tutorial
-  console.log(names);
-
-	function findMatches(wordToMatch) {
-		return names.data.filter((museums) => {
-			const regex = new RegExp(wordToMatch, 'gi');
-			return museums.museum_name.match(regex)
-		});
-	}
-
-	function displayMatches(event) {
-		const matchArray = findMatches(event.target.value, names);
-		const html = matchArray.map((museums) => {
-			const regex = new RegExp(event.target.value, 'gi');
-			const museumName = museums.museum_name.replace(regex, `<span class="h1">${event.target.value}</span>`); // Highlights the restaurants name 		
-			return `
-				<li>
-				<span class = "Title">${museumName}</span>
-        <li class = "URL">${museums.museum_url}</li>
-        <li class = "Address">${museums.museum_address}</li>
-        <li class = "City">${museums.museum_city}</li>
-				</li>
-			`;
-		}).join('');
-		recommendations.innerHTML = html;	
-		
-	}
-
-	const searchInput = document.querySelector('.typehead');
-	const recommendations = document.querySelector('.suggestions');
-
-	searchInput.addEventListener('input', displayMatches);
-	searchInput.addEventListener('button', displayMatches);
-		
-}
-
-window.onload = windowActions;
-
 /*load table data for museum_info*/
 
 async function getMuseumInfo() {
@@ -74,11 +32,11 @@ async function getMuseumInfo() {
   const result = document.querySelector("#resultInfo");
   const request = await fetch("/api/museum_info");
   const tableData = await request.json();
-  console.table(tableData);
+  // console.table(tableData);
   // return tableData;
 
   tableData.data.forEach((museum) => {
-    console.log(museum);
+    // console.log(museum);
     const appendItem = document.createElement("tr");
     // appendItem.classList.add('title', 'has-text-centered', 'is-parent', 'is-3');
     appendItem.innerHTML = `
@@ -100,5 +58,20 @@ async function getMuseumInfo() {
       <td> ${museum.museum_zipcode} </td>`;
     result.append(appendItem);
   });
+  
+  /* Create filter table */
+  const searchInput = document.getElementById('search');
+  const rows = document.querySelector('#resultInfo tr');
+  
+  console.log(rows);
+  searchInput.addEventListener("keyup", function (event) {
+    const q = event.target.value.toLowerCase();
+    rows.forEach((row) => {
+      row.querySelector('td').textContent.toLowerCase().startsWith(q)
+        ? (row.style.display = "table-row")
+        : (row.style.display = "none");
+    });
+  });
+  
 }
 window.onload = getMuseumInfo;
