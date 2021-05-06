@@ -31,6 +31,9 @@ export default (sequelize, DataTypes) => {
     MuseumStaff.belongsTo(models.StaffRole, {
       foreignKey: 'role_id'
     });
+    MuseumStaff.belongsTo(models.MuseumInfo, {
+      foreignKey: 'museum_id'
+    });
   };
   return MuseumStaff;
 };
