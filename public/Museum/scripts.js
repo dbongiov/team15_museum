@@ -59,19 +59,25 @@ async function getMuseumInfo() {
     result.append(appendItem);
   });
   
-  /* Create filter table */
-  const searchInput = document.getElementById('search');
-  const rows = document.querySelector('#resultInfo tr');
-  
-  console.log(rows);
-  searchInput.addEventListener("keyup", function (event) {
-    const q = event.target.value.toLowerCase();
-    rows.forEach((row) => {
-      row.querySelector('td').textContent.toLowerCase().startsWith(q)
-        ? (row.style.display = "table-row")
-        : (row.style.display = "none");
-    });
-  });
-  
 }
 window.onload = getMuseumInfo;
+
+/* Create filter table */
+const searchInput = document.getElementById('search');
+const rows = document.querySelector('#resultInfo');
+
+// const rowArray = Object.keys(rows); // Convert property's names of the rows object to an array. 
+
+console.log(typeof rows);
+
+console.log(rows);
+// rows.length();
+
+searchInput.addEventListener('keyup', function (event) {
+  const q = event.target.value.toLowerCase();
+  rows.forEach((row) => {
+    row.querySelector('td').textContent.toLowerCase().startsWith(q)
+      ? (row.style.display = "table-row")
+      : (row.style.display = "none");
+  });
+});
