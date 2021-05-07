@@ -54,6 +54,7 @@ The are no prewritten tests in the source repository, but you can use Cypress to
 ### Request
 `POST /museum_staff`
 ### Response
+  ```
   {
       const newStaff = await db.MuseumStaff.create({
       staff_id: currentId,
@@ -62,6 +63,7 @@ The are no prewritten tests in the source repository, but you can use Cypress to
       museum_id: req.body.museum_id,
       role_id: req.body.role_id
    }
+   ```
 ### Request
 `PUT /museum_staff`
 ### Response
