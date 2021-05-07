@@ -369,7 +369,8 @@ The are no prewritten tests in the source repository, but you can use Cypress to
 
 # Known Bugs and Future Development
 ## Bugs
-
+- No known bugs
 
 ## Future Development
 - Implementing a map on one of the museum pages
+- The filter functionality and the museum directory table need to be optimized
