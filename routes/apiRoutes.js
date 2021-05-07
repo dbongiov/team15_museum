@@ -94,7 +94,12 @@ router.get('/museum_staff/:staff_id', async (req, res) => {
 });
 
 router.post('/museum_staff', async (req, res) => {
-  const staff = await db.MuseumStaff.findAll(({include: db.StaffRole, MuseumInfo}));
+  const staff = await db.MuseumStaff.findAll({
+    include: [
+      db.MuseumInfo,
+      db.StaffRole
+    ]
+  });
   const currentId = (await staff.length) + 1;
   try {
     const newStaff = await db.MuseumStaff.create({
