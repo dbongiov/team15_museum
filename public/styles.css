@@ -98,3 +98,14 @@ a.navbar-item:hover {
   height: auto;
   max-width: 50%;
 }
+.button.is-primary {
+  background-color: #d10000;
+  border-color: transparent;
+  color: #fff;
+}
+
+.navbar-link:not(.is-arrowless)::after {
+  border-color: #dc3232;
+  margin-top: -.375em;
+  right: 1.125em;
+}
