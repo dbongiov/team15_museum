@@ -6,7 +6,7 @@
 ### Description
 Washington, DC is known to be a popular tourist area for American citizens as well as people visiting from outside of the country. The number of different museums and their daily visitors, transactions, hours, employees, and locations can be overwhelming for management to sift through. Our website aims to create a data set containing useful information for the museum management that includes visitor data, employee data, and facility data. This information will help museum staff manage operations more efficiently.
 
-![alt text](.images/readme.jpeg)
+![Photo of Crowd of People]("../images/museum-2.jpg")
 
 ### Link to Website
 https://team15-museum.herokuapp.com
