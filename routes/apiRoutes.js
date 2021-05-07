@@ -340,6 +340,35 @@ router.put('/Museum_info', async (req, res) => { // Where I left off 19:18 4/6/2
 /// ////Visitor Endpoints////////
 /// /////////////////////////////////
 
+router.route('/visitTransactions')
+  .get(async (req, res) => {
+    try {
+      // const roles = await db.MuseumStaff.findAll({include: db.StaffRole});
+      const transactions = await db.MuseumVisits.findAll({
+        include: [
+          db.Visitors,
+          db.MuseumInfo,
+          db.VisitorTransactions
+        ]
+      });
+      console.table(transactions);
+      const visTransaction = transactions.map((transaction) => {
+        console.log('transaction', transaction);
+        const dataObject = {
+          ...transaction.dataValues,
+          ...transaction.visitor_transaction.dataValues
+        };
+        delete dataObject.visitor_transaction;
+        return dataObject;
+      });
+      console.log(visTransaction);
+      res.json({data: visTransaction});
+    } catch (err) {
+      console.error(err);
+      res.json({message: err});
+    }
+  });
+
 router.route('/wholeVisitor')
   .get(async (req, res) => {
     try {
