@@ -23,12 +23,14 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-/* Table display for staff */
+/* Table display for staff, role titles, and museum */
 async function getData() {
   console.log('data request');
   const result = document.querySelector('#result');
   const roleId = document.querySelector('#roleId');
   const museumIdNames = document.querySelector('#museumIdNames');
+  const employeeIds = document.querySelector('#employeeIds');
+  const form = document.querySelector('.staffDirectory');
   const requestRole = await fetch('/api/museumStaffRole');
   // const requestLoc = await fetch('/api/museumStaffLocation');
   const requestRoleId = await fetch('/api/staff_role');
@@ -61,6 +63,15 @@ async function getData() {
     result.append(appendItem);
   });
 
+  tableData.data.forEach((names) => {
+    console.log(names);
+    const appendItem = document.createElement('option');
+    appendItem.innerHTML = `
+      <option> ${names.employee_first_name} </option>
+      <option> ${names.employee_last_name} </option>`;
+    employeeIds.append(appendItem);
+  });
+
   tableData.data.forEach((musNames) => {
     console.log(musNames);
     const appendItem = document.createElement('option');
@@ -77,12 +88,11 @@ async function getData() {
       <option> ${roleIds.role_title} </option>`;
     roleId.append(appendItem);
   });
+  form.addEventListener('put', (event) => {
+    event.preventDefault();
+    console.log('staff directory update');
+  });
 }
 
 window.onload = getData;
 
-// form.addEventListener("update", (event) => {
-//   event.preventDefault();
-//   console.log('hi');
-//   popMap(event);
-// })
