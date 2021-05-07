@@ -38,10 +38,11 @@ async function getMuseumInfo() {
   tableData.data.forEach((museum) => {
     // console.log(museum);
     const appendItem = document.createElement("tr");
+    appendItem.classList.add('resultRow');
     // appendItem.classList.add('title', 'has-text-centered', 'is-parent', 'is-3');
     appendItem.innerHTML = `
       <td> ${museum.museum_id} </td>
-      <td> ${museum.museum_name} </td>
+      <td class = "museumName"> ${museum.museum_name} </td>
       <td> ${museum.museum_email} </td>
       <td> ${museum.museum_url} </td>
       <td> ${museum.museum_phone_num} </td>
@@ -64,20 +65,20 @@ window.onload = getMuseumInfo;
 
 /* Create filter table */
 const searchInput = document.getElementById('search');
-const rows = document.querySelector('#resultInfo');
 
-// const rowArray = Object.keys(rows); // Convert property's names of the rows object to an array. 
-
-console.log(typeof rows);
-
-console.log(rows);
-// rows.length();
-
-searchInput.addEventListener('keyup', function (event) {
-  const q = event.target.value.toLowerCase();
-  rows.forEach((row) => {
-    row.querySelector('td').textContent.toLowerCase().startsWith(q)
-      ? (row.style.display = "table-row")
-      : (row.style.display = "none");
+function getRows () {
+  const rows = document.querySelectorAll('#resultInfo .resultRow');
+  console.log(rows);
+  searchInput.addEventListener('keyup', function (event) {
+    const q = event.target.value.toLowerCase();
+    rows.forEach((row) => {
+      console.log(q);
+      row.querySelector('.museumName').textContent.toLowerCase().trim().startsWith(q)
+        ? (row.style.display = "table-row")
+        : (row.style.display = "none");
+    });
   });
-});
+}
+// Temporary fix to the filter function
+setTimeout(getRows, 1000)
+
