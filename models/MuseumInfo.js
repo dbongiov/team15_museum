@@ -94,9 +94,9 @@ export default (sequelize, DataTypes) => {
     MuseumInfo.hasMany(models.MuseumStaff, {
       foreignKey: 'museum_id'
     });
-    // MuseumInfo.belongsTo(models.StaffRoles, {
-    //   through: models.MuseumStaff
-    // });
+    MuseumInfo.hasMany(models.MuseumVisits, {
+      foreignKey: 'museum_id'
+    });
   };
   return MuseumInfo;
 };

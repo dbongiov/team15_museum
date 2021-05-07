@@ -5,8 +5,8 @@ export default (sequelize, DataTypes) => {
       transaction_id: {
         type: DataTypes.INTEGER,
         allowNull: false,
-        primaryKey: true,
-        unique: true,
+        primaryKey: true
+        // unique: true
       },
       visitor_id: {
         type: DataTypes.INTEGER
@@ -21,13 +21,10 @@ export default (sequelize, DataTypes) => {
     VisitorTransactions.belongsTo(models.Visitors, {
       foreignKey: 'visitor_id'
     });
+    VisitorTransactions.belongsTo(models.MuseumVisits, {
+      through: models.Visitors,
+      foreignKey: 'visitor_id'
+    });
   };
-  // VisitorTransactions.associate = (models) => {
-  //   VisitorTransactions.belongsToMany(MuseumVisits, {
-  //     through: 'visitors',
-  //     foreignKey: 'visitor_id',
-  //     otherKey: 'visit_date'
-  //   });
-  // };
   return VisitorTransactions;
 };

@@ -24,12 +24,17 @@ export default (sequelize, DataTypes) => {
     },
     {freezeTableName: true, timestamps: false}
   );
-  // MuseumVisits.belongsToMany = (models) => {
-  //   MuseumVisits.belongsToMany(VisitorTransactions, {
-  //     through: 'visitors',
-  //     foreignKey: 'museum_id',
-  //     otherKey: 'visitor_id'
-  //   });
-  // };
+  MuseumVisits.associate = (models) => {
+    MuseumVisits.belongsTo(models.Visitors, {
+      foreignKey: 'visitor_id'
+    });
+    MuseumVisits.belongsTo(models.MuseumInfo, {
+      foreignKey: 'museum_id'
+    });
+    MuseumVisits.belongsTo(models.VisitorTransactions, {
+      through: models.Visitors,
+      foreignKey: 'visitor_id'
+    });
+  };
   return MuseumVisits;
 };

@@ -24,7 +24,10 @@ export default (sequelize, DataTypes) => {
     {freezeTableName: true, timestamps: false}
   );
   Visitors.associate = (models) => {
-    Visitors.hasOne(models.VisitorTransactions, {
+    Visitors.hasMany(models.VisitorTransactions, {
+      foreignKey: 'visitor_id'
+    });
+    Visitors.hasMany(models.MuseumVisits, {
       foreignKey: 'visitor_id'
     });
   };
