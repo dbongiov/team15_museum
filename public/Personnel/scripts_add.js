@@ -49,29 +49,29 @@ async function getData() {
   //   console.table(element.Museum_info);
   // });
   // build table data in html for staff directory //
-  tableData.data.forEach((staff) => {
-    console.log(staff);
-    const appendItem = document.createElement('tr');
-    appendItem.innerHTML = `
-        <td> ${staff.staff_id} </td>
-        <td> ${staff.employee_first_name} </td>
-        <td> ${staff.employee_last_name} </td>
-        <td> ${staff.museum_id} </td>
-        <td> ${staff.Museum_info.museum_name} </td>
-        <td> ${staff.role_id} </td>
-        <td> ${staff.role_title} </td>`;
-    result.append(appendItem);
-  });
+  // tableData.data.forEach((staff) => {
+  //   console.log(staff);
+  //   const appendItem = document.createElement('tr');
+  //   appendItem.innerHTML = `
+  //       <td> ${staff.staff_id} </td>
+  //       <td> ${staff.employee_first_name} </td>
+  //       <td> ${staff.employee_last_name} </td>
+  //       <td> ${staff.museum_id} </td>
+  //       <td> ${staff.Museum_info.museum_name} </td>
+  //       <td> ${staff.role_id} </td>
+  //       <td> ${staff.role_title} </td>`;
+  //   result.append(appendItem);
+  // });
   // populate employee name in drop menu in from //
-  tableData.data.forEach((names) => {
-    console.log(names);
-    const appendItem = document.createElement('option');
-    appendItem.innerHTML = `
-      <option> ${names.employee_first_name} </option>
-      <option> ${names.employee_last_name} </option>`;
-    employeeIds.append(appendItem);
-  });
-  // populate museum name drop menu in form //
+  // tableData.data.forEach((names) => {
+  //   console.log(names);
+  //   const appendItem = document.createElement('option');
+  //   appendItem.innerHTML = `
+  //     <option> ${names.employee_first_name} </option>
+  //     <option> ${names.employee_last_name} </option>`;
+  //   employeeIds.append(appendItem);
+  // });
+  // // populate museum name drop menu in form //
   tableData.data.forEach((musNames) => {
     console.log(musNames);
     const appendItem = document.createElement('option');
@@ -89,10 +89,10 @@ async function getData() {
     roleId.append(appendItem);
   });
   // update staff directory //
-  formStaffDirectory.addEventListener('put', (event) => {
-    event.preventDefault();
-    console.log('staff directory update');
-  });
+  // formStaffDirectory.addEventListener('put', (event) => {
+  //   event.preventDefault();
+  //   console.log('staff directory update');
+  // });
 
   // add staff //
   formAddStaff.addEventListener('post', (event) => {
