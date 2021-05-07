@@ -135,7 +135,9 @@ router.put('/museum_staff', async (req, res) => {
     },
     {
       employee_first_name: req.body.employee_first_name,
-      employee_last_name: req.body.employee_last_name
+      employee_last_name: req.body.employee_last_name,
+      role_id: req.body.role_id,
+      museum_name: req.body.museum_name
     },
     {
       where: {

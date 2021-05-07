@@ -37,9 +37,8 @@ async function getData() {
   const tableData = await requestRole.json();
   // const tableDataLoc = await requestLoc.json();
   const tableDataRoleId = await requestRoleId.json();
-  // return tableData;
+
   console.table(tableData);
-  // console.table(tableDataLoc);
 
   tableData.data.forEach((element) => {
     console.table(element.staff_role);
@@ -95,4 +94,3 @@ async function getData() {
 }
 
 window.onload = getData;
-
