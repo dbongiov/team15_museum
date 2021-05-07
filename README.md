@@ -67,10 +67,12 @@ The are no prewritten tests in the source repository, but you can use Cypress to
 ### Request
 `PUT /museum_staff`
 ### Response
+```
   {
       employee_first_name: req.body.employee_first_name,
       employee_last_name: req.body.employee_last_name
   }
+  ```
 ### Request
 `DELETE /museum_staff/:staff_id`
 ### Response
@@ -85,24 +87,30 @@ The are no prewritten tests in the source repository, but you can use Cypress to
 ### Request
 `GET /staff_role/:role_id`
 ### Response
+```
   {
       role_id: req.params.role_id
   }
+  ```
 ### Request
 `POST /staff_role`
 ### Response
+```
   {
       const newRole = await db.StaffRole.create({
       role_id: currentId,
       role_title: req.body.role_title
    }
+   ```
 ### Request
 `PUT /staff_role`
 ### Response
+```
   {
       role_id: req.body.role_id,
       role_title: req.body.role_title
    }
+   ```
 ### Request
 `DELETE /staff_role/:role_id`
 ### Response
@@ -118,12 +126,15 @@ The are no prewritten tests in the source repository, but you can use Cypress to
 ### Request
 `GET /Museum_info/:museum_id`
 ### Response
+```
   {
       museum_id: req.params.museum_id
   }
+  ```
 ### Request
 `POST /Museum_info`
 ### Response
+```
   {
       museum_id: currentMuseumId,
       museum_name: req.body.museum_name,
@@ -143,9 +154,11 @@ The are no prewritten tests in the source repository, but you can use Cypress to
       museum_zipcode: req.body.museum_zipcode,
       ada_id: req.body.ada_id
    }
+   ```
 ### Request
 `PUT /Museum_info`
 ### Response
+  ```
   {
         museum_name: req.body.museum_name,
         museum_email: req.body.museum_email,
@@ -164,6 +177,7 @@ The are no prewritten tests in the source repository, but you can use Cypress to
         museum_zipcode: req.body.museum_zipcode,
         ada_id: req.body.ada_id
     }
+```
 ### Request
 `DELETE /Museum_info/:museum_id`
 ### Response
@@ -178,12 +192,15 @@ The are no prewritten tests in the source repository, but you can use Cypress to
 ### Request
 `GET /visitors/:visitor_id`
 ### Response
+```
   {
       visitor_id: req.params.visitor_id
   }
+```
 ### Request
 `POST /visitors`
 ### Response
+```
   {
       visitor_id: curId,
       visitor_fn: req.body.vistor_fn,
@@ -191,13 +208,16 @@ The are no prewritten tests in the source repository, but you can use Cypress to
       visitor_phone_num: req.body.visitor_phone_num,
       visitor_email: req.body.visitor_email
    }
+```
 ### Request
 `PUT /visitors`
 ### Reponse
+```
   {
       visitor_phone_num: req.body.visitor_phone_num,
       visitor_email: req.body.visitor_email
   }
+```
 ### Request
 `DELETE /visitors/:visitor_id`
 ### Response
@@ -212,25 +232,31 @@ The are no prewritten tests in the source repository, but you can use Cypress to
 ### Request
 `GET /visitor_transaction/:transaction_id`
 ### Response
+```
   {
       transaction_id: req.params.transaction_id
   }
+```
 ### Request
 `POST /visitor_transaction`
 ### Response
+```
   {
       const newVisTran = await db.VisitorTransactions.create({
       transaction_id: curId,
       visitor_id: req.body.visitor_id,
       visitor_transactions: req.body.visitor_transactions
    }
+```
 ### Request
 `PUT /visitor_transaction`
 ### Response
+```
   {
       visitor_transactions: req.body.visitor_transactions,
       visitor_id: req.body.visitor_id
   }
+```
 ### Request
 `DELETE /visitor_transaction/:transaction_id`
 ### Response
@@ -246,24 +272,30 @@ The are no prewritten tests in the source repository, but you can use Cypress to
 ### Request
 `GET /ada_compliance/:ada_id`
 ### Response
+```
   {
       ada_id: req.params.ada_id
   }
+```
 ### Request
 `POST /ada_compliance`
 ### Response
+```
   {
       const newAda = await db.AdaCompliance.create({
       ada_id: currentId,
       ada_type: req.body.ada_type
   }
+```
 ### Request
 `PUT /ada_compliance`
 ### Response
+```
   {
       ada_id: req.body.ada_id,
       ada_type: req.body.ada_type
   }
+```
 ### Request
 `DELETE /ada_compliance/:ada_id`
 ### Response
@@ -278,12 +310,15 @@ The are no prewritten tests in the source repository, but you can use Cypress to
 ### Request
 `GET /museum_visits/:visitor_id`
 ### Response
+```
   {
        visitor_id: req.params.visitor_id
   }
+```
 ### Request
 `POST /museum_visits`
 ### Response
+```
   {
       const newVisit = await db.MuseumVisits.create({
       vistor_id: currentId,
@@ -291,15 +326,18 @@ The are no prewritten tests in the source repository, but you can use Cypress to
       visit_date: req.body.visit_date,
       member_status: req.body.member_status
    }
+```
 ### Request
 `PUT /museum_visits`
 ### Response
+```
   {
         visitor_id: req.body.visitor_id,
         museum_id: req.body.museum_id,
         visit_date: req.body.visit_date,
         member_status: req.body.member_status
    }
+```
 ### Request
 `DELETE /museum_visits/:visitor_id`
 ### Response
