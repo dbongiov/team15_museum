@@ -107,12 +107,6 @@
 </div>
 <body>
     <div class = "container">
-        <!-- <div class="tabs is-centered">
-            <ul>
-              <li ><a href="./add_staff.html">Add Staff</a></li>
-              <li class="is-active"><a href="./info_search_staff.html">Staff Directory</a></li>
-            </ul>
-          </div> -->
         <div class ="box">
           <div class="content">
             <h1>Staff Directory</h1>
@@ -132,7 +126,6 @@
                       <th>Museum Name</th>
                       <th>Role Id</th>
                       <th>Role Title</th>
-                      
                   </tr>
               </thead>
               <tbody id="result">
@@ -141,18 +134,16 @@
       </div>
       <div class="container">
         <div class = "block">
-        <form class ="box" action = "/api" method = "post" >
-            <div class="field" type="checkbox">
+        <form class ="staffDirectory" action = '/api/museum_team7' method = "PUT" >
+            <div class="field">
                 <div class="block">
-                    <label class= "label" for="employee_first_name">First Name</label>
-                    <div class ="control"><input type="text" id="employee_first_name" placeholder="Enter employee first name here" name="employee_first_name"></div>
-                </div>
-                <div class="block">
-                    <label class= "label" for="employee_last_name">Last Name</label>
-                    <div class ="control"><input type="text" id="employee_last_name" placeholder="Enter employee last name here"
-                    name ="employee_last_name">
+                  <label class= "label" for="museum_id">Employee</label>
+                  <div class="select is-small">
+                      <select id = "employeeIds">
+                        <option>Select Employee</option>
+                      </select>
                     </div>
-                </div>
+              </div>
                 <div class="block">
                   <label class= "label" for="museum_id">Museum Name</label>
                   <div class="select is-small">
@@ -168,52 +159,14 @@
                           <option>Select Role Id</option>
                         </select>
                       </div>
-
-                    
-                    <!-- <div class="control"><input type="role id" id="role id" placeholder="Enter Role ID"
-                    name="role id"></div> -->
                 </div>
-                <!-- <div class="block">
-                    <label class= "label" for="email">Email</label>
-                    <div class="control"><input type="email" id="email" placeholder="Enter Employee email here"
-                    name="email"></div>
-                </div> -->
-                <!-- <div class="block">
-                  <label class= "label" for="museum_name">Museum Name</label>
-                  <div class ="control"><input type="text" id="museum_name" placeholder="Enter museum name here"
-                  name ="museum_name">
-                  </div> -->
               </div>
-                <!-- <div>
-                    <label for="phone">Phone</label>
-                    <input type="tel" id="phone" placeholder="Enter your phone number here"
-                    name="phone">
-                </div>
-                <div>
-                    <label for="message">Message</label>
-                    <textarea name="message" rows="6" id="message" rows="5" cols="33" placeholder="Enter your message here" type="checkbox" name="message"></textarea>
-                </div> -->
-                <!-- <div>
-                    <p>Age</p>
-                    <div class ="flex-inner" type="checkbox">
-                        <div>
-                            <input type="checkbox" id="twenty-to-twentynine" name="twenty-to-twentynine">
-                            <label for= "twenty-to-twentynine">20-29</label>
-                        </div>
-                        
-                        <div>
-                            <input type="checkbox" id="other" name="">
-                            <label for= "other">Other</label>
-                        </div>
-                    </div>
-                </div> -->
                 <div class="buttons has addons">
-                    <button class ="button is-small" type="Update" value="Submit input" id="button" method="PUT" name="button">Update</button>
+                    <button class ="button is-small" type="put" value="Submit input" id="button" method="PUT" name="button">Update</button>
                 </div>   
             </div>
         </form>
       </div>
-  
 </body>
 <footer class="footer">
   <div class="content has-text-centered">
