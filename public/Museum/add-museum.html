@@ -110,130 +110,239 @@
   </div>
   <div class="container">
     <div class="box">
-      <div class="content"><h1>Add Museum</h1></div>
+      <div class="content has-text-centered"><h1 style="font-size: 46px;">Add Museum</h1></div>
       <div class="content">
-        <p>
+        <p class="has-text-centered" style="font-size: 18px;">
           On this page you can add museum information by using form below. After entering museum information click submit.
         </p>
       </div>
     </div>
-    <div class="block">
-    <form class="box" action = "/api" method = "post" >
-        <div class="field" type="checkbox">
-          <div class="block">
-              <label class= "label" for="museum_name">Museum Name</label>
-              <div class ="control"><input type="text" id="museum_name" placeholder="Enter the museum name here" name="museum_name"></div>
-          </div>
-          <div class="block">
-              <label class= "label" for="museum_email">Museum Email</label>
-              <div class ="control"><input type="text" id="museum_email" placeholder="Enter the museum email here" name ="museum_email">
+
+
+  <div class="block">
+    <form class="box" action="/api" method="post">
+      <div style="display:flex; ">
+        <div class="field" style="flex: 50%; justify-content: left; flex-direction: row; ">
+          <div class="field">
+            <div class="field-label is-normal" style="text-align:left ">
+              <label class= "label" for="museum_name" style="font-size: 18px;">Museum Name</label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <p class="control">
+                  <input class="input column is-7" type="text" id="museum_name" name="museum_name" placeholder="Enter museum name here">
+                </p>
               </div>
+            </div>
           </div>
-          <div class="block">
-              <label class= "label" for="museum_url">Museum URL</label>
-              <div class ="control"><input type="text" id="museum_url" placeholder="Enter the museum URL here" name ="museum_url">
+
+          <div class="field">
+            <div class="field-label is-normal" style="text-align:left">
+              <label class= "label" for="museum_email" style="font-size: 18px;">Museum Email</label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <p class="control">
+                  <input class="input column is-7" type="text" id="museum_email" name="museum_email" placeholder="Enter museum email here">
+                </p>
               </div>
+            </div>
           </div>
-          <div class="block">
-              <label class= "label" for="museum_phone_num">Museum Phone Number</label>
-              <div class ="control"><input type="text" id="museum_phone_num" placeholder="Enter the museum phone number here" name ="museum_phone_num">
+
+          <div class="field">
+            <div class="field-label is-normal" style="text-align:left">
+              <label class= "label" for="museum_url" style="font-size: 18px;">Museum URL</label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <p class="control">
+                  <input class="input column is-7" type="text" id="museum_url" name="museum_url" placeholder="Enter museum URL here">
+                </p>
               </div>
+            </div>
           </div>
-          <div class="block">
-              <label class= "label" for="museum_entry_fee">Museum Entry Fee</label>
-              <div class ="control"><input type="text" id="museum_entry_fee" placeholder="Enter the museum entry fee here" name ="museum_entry_fee">
+
+          <div class="field">
+            <div class="field-label is-normal" style="text-align:left">
+              <label class= "label" for="museum_phone_num" style="font-size: 18px;">Museum Phone Number</label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <p class="control">
+                  <input class="input column is-7" type="text" id="museum_phone_num" name="museum_phone_num" placeholder="Enter museum phone number here">
+                </p>
               </div>
+            </div>
           </div>
-          <div class="block">
-              <label class= "label" for="museum_open_time">Museum Open Time</label>
-              <div class ="control"><input type="text" id="museum_open_time" placeholder="Enter the museum openening time here" name ="museum_open_time">
+
+          <div class="field">
+            <div class="field-label is-normal" style="text-align:left">
+              <label class= "label" for="museum_entry_fee" style="font-size: 18px;">Museum Entry Fee</label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <p class="control">
+                  <input class="input column is-7" type="text" id="museum_entry_fee" name="museum_entry_fee" placeholder="Enter museum entry fee here">
+                </p>
               </div>
+            </div>
           </div>
-          <div class="block">
-              <label class= "label" for="museum_close_time">Museum Close Time</label>
-              <div class ="control"><input type="text" id="museum_close_time" placeholder="Enter the museum closing time here" name ="museum_close_time">
+
+          <div class="field">
+            <div class="field-label is-normal" style="text-align:left">
+              <label class= "label" for="museum_open_time" style="font-size: 18px;">Museum Open Time</label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <p class="control">
+                  <input class="input column is-7" type="text" id="museum_open_time" name="museum_open_time" placeholder="Enter museum openening time here">
+                </p>
               </div>
+            </div>
           </div>
-          <div class="block">
-              <label class= "label" for="date_museum_opened">Date Museum Opened</label>
-              <div class ="control"><input type="text" id="date_museum_opened" placeholder="Enter the date the museum opened" name ="date_museum_opened">
+
+          <div class="field">
+            <div class="field-label is-normal" style="text-align:left">
+              <label class= "label" for="museum_close_time" style="font-size: 18px;">Museum Close Time</label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <p class="control">
+                  <input class="input column is-7" type="text" id="museum_close_time" name="museum_close_time" placeholder="Enter museum closing time here">
+                </p>
               </div>
+            </div>
           </div>
-          <div class="block">
-              <label class= "label" for="museum_capacity">Museum Capacity</label>
-              <div class ="control"><input type="text" id="museum_capacity" placeholder="Enter the museum capacity here" name ="museum_capacity">
+
+          <div class="field">
+            <div class="field-label is-normal" style="text-align:left">
+              <label class= "label" for="date_museum_opened" style="font-size: 18px;">Date Museum Opened</label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <p class="control">
+                  <input class="input column is-7" type="text" id="date_museum_opened" name="date_museum_opened" placeholder="Enter date the museum opened">
+                </p>
               </div>
-          </div>
-          <div class="block">
-              <label class= "label" for="museum_size">Museum Size</label>
-              <div class ="control"><input type="text" id="museum_size" placeholder="Enter the museum size here" name ="museum_size">
-              </div>
-          </div>
-          <div class="block">
-              <label class= "label" for="museum_parent">Museum Parent</label>
-              <div class ="control"><input type="text" id="museum_parent" placeholder="Enter the museum parent here" name ="museum_parent">
-              </div>
-          </div>
-          <div class="block">
-              <label class= "label" for="museum_budget">Museum Budget</label>
-              <div class ="control"><input type="text" id="museum_budget" placeholder="Enter the museum budget here" name ="museum_budget">
-              </div>
-          </div>
-          <div class="block">
-              <label class= "label" for="museum_address">Museum Address</label>
-              <div class ="control"><input type="text" id="museum_address" placeholder="Enter the museum address here" name ="museum_address">
-              </div>
-          </div>
-          <div class="block">
-              <label class= "label" for="museum_city">Museum City</label>
-              <div class ="control"><input type="text" id="museum_city" placeholder="Enter the museum city here" name ="museum_city">
-              </div>
-          </div>
-          <div class="block">
-              <label class= "label" for="museum_zipcode">Museum Zipcode</label>
-              <div class ="control"><input type="text" id="museum_zipcode" placeholder="Enter the museum zip code here" name ="museum_zipcode">
-              </div>
-          </div>
-          <div class="block">
-              <label class= "label" for="ada_id">ADA ID</label>
-              <div class ="control"><input type="text" id="ada_id" placeholder="Enter the ADA ID here" name ="ada_id">
-              </div>
-          </div>
-          <div class="block">
-              <button class ="button is-small" type="submit" id="button" method="post" name="button">Submit</button>
+            </div>
           </div>
         </div>
-    </form>
-  </div>
-</body>
-<footer class="footer">
-<div class="content has-text-centered">
-  <p>
-    <strong>Bulma</strong> by
-    <a href="https://jgthms.com">Jeremy Thomas</a>. The source code is
-    licensed
-    <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The
-    website content is licensed
-    <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/"
-      >CC BY NC SA 4.0</a
-    >.
-  </p>
-</div>
 
-</body>
-<footer class="footer">
-<div class="content has-text-centered">
-<p>
-  <strong>Bulma</strong> by <a href="https://jgthms.com">Jeremy Thomas</a>. The source code is licensed
-  <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
-  is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
-</p>
-</div>
-</footer>
-<script src ="scripts.js"></script>
-</footer>
-<script src="scripts.js"></script>
-</html> 
+        <div class="field" style="flex: 50%; margin-left:50px;">
+          <div class="field">
+            <div class="field-label is-normal" style="text-align:left">
+              <label class= "label" for="museum_capacity" style="font-size: 18px;">Museum Capacity</label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <p class="control">
+                  <input class="input column is-7" type="text" id="museum_capacity" name="museum_capacity" placeholder="Enter museum capacity here">
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="field">
+            <div class="field-label is-normal" style="text-align:left">
+              <label class= "label" for="museum_size" style="font-size: 18px;">Museum Size</label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <p class="control">
+                  <input class="input column is-7" type="text" id="museum_size" name="museum_size" placeholder="Enter museum size here">
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="field">
+            <div class="field-label is-normal" style="text-align:left">
+              <label class= "label" for="museum_parent" style="font-size: 18px;">Museum Parent</label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <p class="control">
+                  <input class="input column is-7" type="text" id="museum_parent" name="museum_parent" placeholder="Enter museum parent here">
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="field">
+            <div class="field-label is-normal" style="text-align:left">
+              <label class= "label" for="museum_budget" style="font-size: 18px;">Museum Budget</label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <p class="control">
+                  <input class="input column is-7" type="text" id="museum_budget" name="museum_budget" placeholder="Enter museum budget here">
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="field">
+            <div class="field-label is-normal" style="text-align:left">
+              <label class= "label" for="museum_address" style="font-size: 18px;">Museum Address</label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <p class="control">
+                  <input class="input column is-7" type="text" id="museum_address" name="museum_address" placeholder="Enter museum address here">
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="field">
+            <div class="field-label is-normal" style="text-align:left">
+              <label class= "label" for="museum_city" style="font-size: 18px;">Museum City</label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <p class="control">
+                  <input class="input column is-7" type="text" id="museum_city" name="museum_city" placeholder="Enter museum city here">
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="field">
+            <div class="field-label is-normal" style="text-align:left">
+              <label class= "label" for="museum_zipcode" style="font-size: 18px;">Museum Zipcode</label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <p class="control">
+                  <input class="input column is-7" type="text" id="museum_zipcode" name="museum_zipcode" placeholder="Enter museum zip code here">
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="field">
+            <div class="field-label is-normal" style="text-align:left">
+              <label class= "label" for="ada_id" style="font-size: 18px;">ADA ID</label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <p class="control">
+                  <input class="input column is-7" type="text" id="ada_id" name="ada_id" placeholder="Enter the ADA ID here">
+                </p>
+              </div>
+            </div>
+          </div>
+
+          </div>
+        </div>
+        <hr>
+        <div class="block has-text-centered">
+          <button class ="button is-primary is-medium" type="submit" id="button" method="post" name="button">Submit</button>
+        </div>
+      </div>
+    </form> 
+  </div>
+
 </body>
   <footer class="footer">
     <div class="content has-text-centered">
