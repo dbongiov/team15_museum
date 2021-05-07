@@ -30,40 +30,49 @@
 
     <div id="navbarBasicExample" class="navbar-menu">
       <div style="flex-grow: 1; justify-content: center" class="navbar-start">
-        <a class="navbar-item" href="../index.html"> About </a>
+        <a class="navbar-item" href="../About/about.html"> About </a>
 
         <div class="navbar-item has-dropdown is-hoverable">
           <a class="navbar-link" href="../Museum/museum.html"> Museum </a>
 
           <div class="navbar-dropdown">
             <a class="navbar-item" href="../Museum/add-museum.html">
-              Add Museum
-            </a>
-            <a class="navbar-item" href="../Museum/update-museum.html">
-              Update Museum
+              Add Museum 
             </a>
             <a class="navbar-item" href="../Museum/museum-info.html">
-              Museum Information
+              Museum Directory
             </a>
           </div>
         </div>
 
         <div class="navbar-item has-dropdown is-hoverable">
-          <a class="navbar-link" href="./transactions.html">
+          <a class="navbar-link" href="../Transactions/transactions.html">
             Transactions
           </a>
-  
-          <a class="navbar-item" href="../Personnel/personnel.html">
-              Personnel
-          </a>
-  
-          <a class="navbar-item" href="../Visitors/visitors.html">
-                Visitors
+
+          <div class="navbar-dropdown">
+            <a
+              class="navbar-item"
+              href="../Transactions/transaction_museum.html"
+            >
+              Transactions by Museum
             </a>
-    
-          <!-- <div class="navbar-item has-dropdown is-hoverable">
-            <a class="navbar-link">
-              More
+            <a class="navbar-item" href="../Transactions/transaction_date.html">
+              Transactions by Date
+            </a>
+          </div>
+        </div>
+
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="../Personnel/personnel.html">
+            Personnel
+          </a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="../Personnel/add_staff.html">
+              Add Staff Information
+            </a>
+            <a class="navbar-item" href="../Personnel/info_search_staff.html">
+              Staff Directory
             </a>
           </div>
         </div>
@@ -73,37 +82,36 @@
 
           <div class="navbar-dropdown">
             <a class="navbar-item" href="../Visitors/add-visitors.html">
-              Add Visitors
+              Add Visitor Information
             </a>
             <a class="navbar-item" href="../Visitors/visitor-search.html">
-              Visitor Information Search
+              Search Visitor Information
             </a>
-          </div>
-        </div>
-      </div>
-
-      <div class="navbar-end">
-        <div class="navbar-item">
-          <div class="buttons">
-            <a class="button is-primary">
-              <strong>Sign up</strong>
-            </a>
-            <a class="button is-light"> Log in </a>
           </div>
         </div>
       </div>
     </div>
-  </nav>
-</div>
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+          <a class="button is-primary">
+            <strong>Sign up</strong>
+          </a>
+          <a class="button is-light"> Log in </a>
+        </div>
+      </div>
+    </div>
+    </nav>
+  </div>
 <body>
     <div class = "container">
-        <div class="tabs is-centered">
+        <!-- <div class="tabs is-centered">
             <ul>
               <li ><a href="./transaction_museum.html">Transactions by Museum</a></li>
               <li class="is-active" ><a href="./transaction_date.html">Transactions by Date</a></li>
-              <!-- <li ><a href="./info_search_staff.html">Information Search</a></li> -->
-            </ul>
-          </div>
+              <li ><a href="./info_search_staff.html">Information Search</a></li> -->
+            <!-- </ul>
+          </div>  -->
         <div class ="box">
           <div class="content"> <h1>Transactions by Date</h1> </div>
           <div class ="content"><p> To retreive transactions by date from the database enter musuem name and select date range. Press submit when done.</p></div>
