@@ -34,13 +34,13 @@ The are no prewritten tests in the source repository, but you can use Cypress to
 2. In the first terminal, run npm start.
 3. In the second terminal run npm test.
 # Server application APIs
-## **/api - API route for greeting the user to the website.**
+# **/api - API route for greeting the user to the website.**
 ### Request
 `GET /` 
 ### Response
 ```'Welcome to Museum App!'.```
 
-## **/museum_staff - API route for museum staff.**
+# **/museum_staff - API route for museum staff.**
 ### Request
 `GET /museum_staff` 
 ### Response
@@ -80,7 +80,7 @@ The are no prewritten tests in the source repository, but you can use Cypress to
 ### Response
  ```Succesfully Deleted```
  
-## **/staff_role - API route for staff roles.**
+# **/staff_role - API route for staff roles.**
 
 ### Request
 `GET /staff_role`
@@ -119,7 +119,7 @@ The are no prewritten tests in the source repository, but you can use Cypress to
   ```Successfully Deleted```
 
 
-## **/Museum_info - API route for general museum information.**
+# **/Museum_info - API route for general museum information.**
 
 ### Request
 `GET /Museum_info`
@@ -186,7 +186,7 @@ The are no prewritten tests in the source repository, but you can use Cypress to
   ```Successfully Deleted```
    
    
-## **/wholeVisitor - API route for visitors.**
+# **/wholeVisitor - API route for visitors.**
 
 ### Request
 `GET /visitors`
@@ -227,7 +227,7 @@ The are no prewritten tests in the source repository, but you can use Cypress to
    ```Successfully Deleted```
    
 
-## **/visitor_transaction - API route for visitor transactions.**
+# **/visitor_transaction - API route for visitor transactions.**
 
 ### Request
 `GET /visitor_transaction`
@@ -268,7 +268,7 @@ The are no prewritten tests in the source repository, but you can use Cypress to
    
    
    
-## **/ada_compliance - API route for ada compliance.**
+# **/ada_compliance - API route for ada compliance.**
 
 ### Request
 `GET /ada_compliance`
@@ -307,7 +307,7 @@ The are no prewritten tests in the source repository, but you can use Cypress to
    ```Successfully Deleted```
    
    
-## **/museum_visits - API route for museum visits.**
+# **/museum_visits - API route for museum visits.**
 
 ### Request
 `GET /museum_visits`
