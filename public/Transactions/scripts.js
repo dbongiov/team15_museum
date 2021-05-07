@@ -1,28 +1,3 @@
-async function getData() {
-  console.log("data request");
-  const result = document.querySelector("#result");
-  const request = await fetch("/api/museumTrans");
-  const tableData = await request.json();
-  // return tableData;
-
-  tableData.data.forEach((name) => {
-    console.log(name);
-    const appendItem = document.createElement("tr");
-    // appendItem.classList.add('title', 'has-text-centered', 'is-parent', 'is-3');
-    appendItem.innerHTML = `
-          <select><option> ${name.museum_name} </option></select>
-          <select><option> ${name.museum_name} </option></select>
-          <select><option> ${name.museum_name} </option></select>
-          <select><option> ${name.museum_name} </option></select>
-          <select><option> ${name.museum_name} </option></select>
-          <select><option> ${name.museum_name} </option></select>
-          <select><option> ${name.museum_name} </option></select>
-          <select><option> ${name.museum_name} </option></select>`;
-    result.append(appendItem);
-  });
-}
-window.onload = getData;
-
 /* This is for the nav-bar */
 document.addEventListener("DOMContentLoaded", () => {
   // Get all "navbar-burger" elements
@@ -47,6 +22,74 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
-// class="has-text-light"
-// class="title is-child box has-background-link-dark"
-// class="subtitle has-text-light has-text-weight-bold"
+
+/* Table display for transactions by museum */
+async function getData() {
+  console.log('data request');
+  const result = document.querySelector('#result');
+  const roleId = document.querySelector('#roleId');
+
+  const museumIdNames = document.querySelector('#museumIdNames');
+  const employeeIds = document.querySelector('#employeeIds');
+  const formStaffDirectory = document.querySelector('.staffDirectory');
+  const formAddStaff = document.querySelector('.addStaff');
+  
+  
+  const requestRole = await fetch('/api/museumStaffRole');
+  // const requestRoleId = await fetch('/api/staff_role');
+  const requestVisTrans = await fetch('/api/visitTransactions');
+  const requestMuseum = await fetch ('/api/museum_info');
+
+  
+  const tableData = await requestRole.json();
+  // const tableDataRoleId = await requestRoleId.json();
+  const tableDataVisTran = await requestVisTrans.json();
+  const tableDataMuseum = await requestMuseum.json();
+
+  console.table(tableData);
+
+  // tableDataVisTran.data.forEach((element) => {
+  //   console.table(element.visitor_transaction);
+  // });
+
+  // tableDataLoc.data.forEach((element) => {
+  //   console.table(element.Museum_info);
+  // });
+  // // build table data in html for staff directory //
+  // tableDataVisTran.data.forEach((transaction) => {
+  //   console.log(transaction);
+  //   const appendItem = document.createElement('tr');
+  //   appendItem.innerHTML = `
+  //       <td> ${transaction.visitor_transaction.visitor_transactions} </td>
+  //       <td> ${transaction.visitor_transaction.transaction_id} </td>
+  //       <td> ${transaction.visitor_transaction.visitor_id} </td>
+  //       <td> ${transaction.museum_visits.museum_id} </td>
+  //       <td> ${transaction.Museum_info.museum_name} </td>`;
+  //   result.append(appendItem);
+  // });
+
+
+  // populate museum name drop menu in form //
+  tableData.data.forEach((musNames) => {
+    console.log(musNames);
+    const appendItem = document.createElement('option');
+    appendItem.innerHTML = `
+      <option> ${musNames.Museum_info.museum_name} </option>`;
+    museumIdNames.append(appendItem);
+  });
+ 
+  // update staff directory //
+  formStaffDirectory.addEventListener('put', (event) => {
+    event.preventDefault();
+    console.log('staff directory update');
+  });
+
+  // add staff //
+  formAddStaff.addEventListener('post', (event) => {
+    event.preventDefault();
+    console.log('add staff to directory');
+  });
+}
+
+window.onload = getData;
+
