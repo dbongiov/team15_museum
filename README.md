@@ -42,6 +42,14 @@ The are no prewritten tests in the source repository, but you can use Cypress to
 
 # **/museum_staff - API route for museum staff.**
 ### Request
+`Get /museumStaffRole`
+### Response
+```{
+      db.MuseumInfo,
+      db.StaffRole
+   }
+```
+### Request
 `GET /museum_staff` 
 ### Response
 ```'findAll'```
@@ -230,6 +238,16 @@ The are no prewritten tests in the source repository, but you can use Cypress to
 # **/visitor_transaction - API route for visitor transactions.**
 
 ### Request
+`GET /visitTransactions`
+### Response
+```
+  {
+      db.Visitors,
+      db.MuseumInfo,
+      db.VisitorTransactions
+  }    
+```
+### Request
 `GET /visitor_transaction`
 ### Response
 ```'findAll'```
@@ -351,7 +369,8 @@ The are no prewritten tests in the source repository, but you can use Cypress to
 
 # Known Bugs and Future Development
 ## Bugs
-
+- No known bugs
 
 ## Future Development
 - Implementing a map on one of the museum pages
+- The filter functionality and the museum directory table need to be optimized
