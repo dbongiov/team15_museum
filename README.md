@@ -33,24 +33,26 @@ The are no prewritten tests in the source repository, but you can use Cypress to
 1. Open two terminals and make sure you are in the main project directory
 2. In the first terminal, run npm start.
 3. In the second terminal run npm test.
-### Server application APIs
-/api - API route for greeting the user to the website.
+# Server application APIs
+## /api - API route for greeting the user to the website.
 ### Request
 `GET /` 
 ### Response
-`'Welcome to Museum App!'.`
+```'Welcome to Museum App!'.```
 
-/museum_staff - API route for museum staff.
+## /museum_staff - API route for museum staff.
 ### Request
 `GET /museum_staff` 
 ### Response
-`'findAll'.`
+```'findAll'```
 ### Request
 `GET /museum_staff/:staff_id` 
 ### Response
+```
   {
       staff_id: req.params.staff_id
   }
+```
 ### Request
 `POST /museum_staff`
 ### Response
@@ -76,14 +78,14 @@ The are no prewritten tests in the source repository, but you can use Cypress to
 ### Request
 `DELETE /museum_staff/:staff_id`
 ### Response
- Succesfully Deleted
+ ```Succesfully Deleted```
  
-/staff_role - API route for staff roles.
+## /staff_role - API route for staff roles.
 
 ### Request
 `GET /staff_role`
 ### Response 
-`'findAll'.`
+```'findAll'```
 ### Request
 `GET /staff_role/:role_id`
 ### Response
@@ -114,15 +116,15 @@ The are no prewritten tests in the source repository, but you can use Cypress to
 ### Request
 `DELETE /staff_role/:role_id`
 ### Response
-  Successfully Deleted
+  ```Successfully Deleted```
 
 
-/Museum_info - API route for general museum information.
+## /Museum_info - API route for general museum information.
 
 ### Request
 `GET /Museum_info`
 ### Response
-`'findAll'`
+```'findAll'```
 ### Request
 `GET /Museum_info/:museum_id`
 ### Response
@@ -181,14 +183,15 @@ The are no prewritten tests in the source repository, but you can use Cypress to
 ### Request
 `DELETE /Museum_info/:museum_id`
 ### Response
-   Successfully Deleted
+  ```Successfully Deleted```
    
    
-/wholeVisitor - API route for visitors.
+## /wholeVisitor - API route for visitors.
+
 ### Request
 `GET /visitors`
 ### Response
-`'findAll'`
+```'findAll'```
 ### Request
 `GET /visitors/:visitor_id`
 ### Response
@@ -221,14 +224,15 @@ The are no prewritten tests in the source repository, but you can use Cypress to
 ### Request
 `DELETE /visitors/:visitor_id`
 ### Response
-   Successfully Deleted
+   ```Successfully Deleted```
    
 
-/visitor_transaction - API route for visitor transactions.
+## /visitor_transaction - API route for visitor transactions.
+
 ### Request
 `GET /visitor_transaction`
 ### Response
-`'findAll'`
+```'findAll'```
 ### Request
 `GET /visitor_transaction/:transaction_id`
 ### Response
@@ -260,15 +264,16 @@ The are no prewritten tests in the source repository, but you can use Cypress to
 ### Request
 `DELETE /visitor_transaction/:transaction_id`
 ### Response
-   Succesfully Deleted
+   ```Succesfully Deleted```
    
    
    
-/ada_compliance - API route for ada compliance.
+## /ada_compliance - API route for ada compliance.
+
 ### Request
 `GET /ada_compliance`
 ### Response
-`'findAll'`
+```'findAll'```
 ### Request
 `GET /ada_compliance/:ada_id`
 ### Response
@@ -299,14 +304,15 @@ The are no prewritten tests in the source repository, but you can use Cypress to
 ### Request
 `DELETE /ada_compliance/:ada_id`
 ### Response
-   Successfully Deleted
+   ```Successfully Deleted```
    
    
-/museum_visits - API route for museum visits.
+## /museum_visits - API route for museum visits.
+
 ### Request
 `GET /museum_visits`
 ### Response
-`'findAll'`
+```'findAll'```
 ### Request
 `GET /museum_visits/:visitor_id`
 ### Response
@@ -341,7 +347,7 @@ The are no prewritten tests in the source repository, but you can use Cypress to
 ### Request
 `DELETE /museum_visits/:visitor_id`
 ### Response
-   Succesfully Deleted
+   ```Succesfully Deleted```
 
 # Known Bugs and Future Development
 ## Bugs
