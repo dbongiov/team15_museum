@@ -106,12 +106,6 @@
 </div>
 <body>
     <div class = "container">
-        <!-- <div class="tabs is-centered">
-            <ul>
-              <li class="is-active"><a href="./add_staff.html">Add Staff</a></li>
-              <li ><a href="./info_search_staff.html">Staff Directory</a></li>
-            </ul>
-          </div> -->
           <div class ="box">
             <div class ="content"> <h1>Add Staff Information</h1> </div>
             <div class ="content"><p> To add staff to the database enter employee first and last name, then select the worker's Museum ID and Role ID. Press submit when done.</p></div>
@@ -130,24 +124,18 @@
                       </div>
                   </div>
                   <div class="block">
-                    <label class= "label" for="museum_id">Museum ID</label>
+                    <label class= "label" for="museum_id">Museum Name</label>
                     <div class="select is-small">
-                        <select>
+                        <select id = "museumIdNames">
                           <option>Select Museum by dropdown</option>
-                          <option>With options</option>
-                          <option>With options</option>
-                          <option>With options</option>
                         </select>
                       </div>
                 </div>
                   <div class="block">
                       <label class= "label" for="role_id">Role ID</label>
-                      <div class="select is-small block">
-                          <select>
-                            <option>Select Role by dropdown</option>
-                            <option>With options</option>
-                            <option>With options</option>
-                            <option>With options</option>
+                      <div class="select is-small">
+                          <select id = "roleId">
+                            <option>Select Role Id</option>
                           </select>
                         </div>
 
