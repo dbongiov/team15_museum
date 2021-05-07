@@ -43,7 +43,6 @@ async function getMuseumInfo() {
     appendItem.innerHTML = `
       <td> ${museum.museum_id} </td>
       <td class = "museumName"> ${museum.museum_name} </td>
-      <td> ${museum.museum_name} </td>
       <td> ${museum.museum_email} </td>
       <td> ${museum.museum_url} </td>
       <td> ${museum.museum_phone_num} </td>
